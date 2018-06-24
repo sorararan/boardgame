@@ -21,6 +21,11 @@ public class PlayerController : MonoBehaviour {
 			player.transform.position = pos;
 			yield return new WaitForSeconds (0.5f);
 		}
+		if(player.transform.position.x == BoardMaster.BackStage * 1.5f){
+			Vector3 pos = player.transform.position;
+			pos.x = 0;
+			player.transform.position = pos;
+		}
 		if (player.transform.position.x > BoardMaster.getInstance ().getfinishPoint () - 0.5f) {
 			BoardMaster.getInstance ().finish ();
 		}

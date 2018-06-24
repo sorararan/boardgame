@@ -12,6 +12,8 @@ public class BoardMaster : MonoBehaviour {
 	private TextController textcontroller;
 	//階段が何段か
 	private int StageCount = 21;
+	//振り出しへ戻るマスの位置
+	public static int BackStage;
 	//終着点
 	private float finish_point;
 	//勝った方のid(0: 自分、1: 敵)
@@ -61,6 +63,11 @@ public class BoardMaster : MonoBehaviour {
 		finish_point = i * 1.5f;
 		Instantiate (GoalPrefab, new Vector3 (i * 1.5f, 0.0001f, 0), Quaternion.identity);
 		Instantiate (GoalPrefab, new Vector3 (i * 1.5f, 0.0001f, 2), Quaternion.identity);
+
+		//振り出しへ戻るマスの乱数
+		BackStage = 3 * Random.Range(1, StageCount/3);
+		Instantiate (StartPrefab, new Vector3(BackStage * 1.5f, 0.0002f, 0), Quaternion.identity);
+		Instantiate (StartPrefab, new Vector3(BackStage * 1.5f, 0.0002f, 2), Quaternion.identity);
 	}
 
 	public void UpdateGame (int id) {
