@@ -11,6 +11,7 @@ public class BoardMaster : MonoBehaviour {
 	//テキストコントローラ
 	private TextController textcontroller;
 	//階段が何段か
+	[SerializeField]
 	private int StageCount = 21;
 	//振り出しへ戻るマスの位置
 	public static int BackStage;
@@ -39,6 +40,9 @@ public class BoardMaster : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		while(StageCount%3 != 0){
+			StageCount++;
+		}
 		//コントローラの呼び出し
 		playercontroller = GetComponent<PlayerController>();
 		textcontroller = GameObject.Find ("Instruction").GetComponent<TextController> ();
