@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class BoardMaster : MonoBehaviour {
+	public static bool is_moving = false;
 	//プレイヤコントローラ
 	private PlayerController playercontroller;
 	//テキストコントローラ
@@ -126,7 +127,7 @@ public class BoardMaster : MonoBehaviour {
 		}
 	}
 
-	void Update () {
+	public void finish () {
 		//ゴール位置まで来たらエンド画面へ
 		if(Player0.transform.localPosition.x > finish_point - 0.5f){
 			winid = 0;
@@ -140,5 +141,9 @@ public class BoardMaster : MonoBehaviour {
 
 	public static int getwinID(){
 		return winid;
+	}
+
+	public float getfinishPoint(){
+		return finish_point;
 	}
 }

@@ -16,6 +16,8 @@ public class ButtonController : MonoBehaviour {
 	}
 
 	public void OnClickButton () {
-		BoardMaster.getInstance().UpdateGame(id);
+		if (!BoardMaster.is_moving) {
+			BoardMaster.getInstance ().UpdateGame (id);
+		}
 	}
 }
