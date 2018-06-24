@@ -18,7 +18,6 @@ public class RockScissorsPaper : MonoBehaviour {
 	//引数 0: グー、1: チョキ、3: パー
 	//返り値 0: 引き分け、1: player1負け、2: player1勝ち
 	public int Battle (int player1, int player2) {
-		Debug.Log (player1);
 		int judge = (player1 - player2 + 3) % 3;
 		return judge;
 	}

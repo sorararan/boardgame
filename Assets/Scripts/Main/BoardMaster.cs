@@ -49,6 +49,7 @@ public class BoardMaster : MonoBehaviour {
 	}
 
 	public void UpdateGame (int id) {
+		textcontroller.setText("");
 		
 		int enemy_move = Random.Range (0, 3);
 		
@@ -68,10 +69,12 @@ public class BoardMaster : MonoBehaviour {
 				//負け
 			case 1:
 				textcontroller.addText("負け\n");
+				textcontroller.addText(idtostring(enemy_move) + "\n");
 				break;
 				//勝ち
 			case 2:
 				textcontroller.addText("勝ち\n");
+				textcontroller.addText(idtostring(id) + "\n");
 				break;
 			default:
 				Debug.Log ("勝負判定に変な値が入っている");
@@ -85,12 +88,19 @@ public class BoardMaster : MonoBehaviour {
 				return Resources.Load("Materials/gu") as Texture2D;
 			case 1:
 				return Resources.Load("Materials/choki") as Texture2D;
-			case 2:
+			default:
 				return Resources.Load("Materials/pa") as Texture2D;
 		}
-		
-		//ここへたどり着くとエラー
-		Debug.Log("画像読み込みエラー")
-		return Resources.Load("Materials/pa") as Texture2D;
+	}
+
+	private string idtostring(int id){
+		switch(id){
+			case 0:
+				return "グリコ";
+			case 1:
+				return "チヨコレイト";
+			default:
+				return "パイナツプル";
+		}
 	}
 }
