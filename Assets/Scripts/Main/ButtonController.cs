@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ButtonController : MonoBehaviour {
+	//0: グー、1: チョキ、2: パー
 	[SerializeField]
 	private int id;
 	private Button button;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RockScissorsPaper : MonoBehaviour {
+	//singletonパターン
 	static RockScissorsPaper instance;
 	public static RockScissorsPaper getInstance () {
 		if (instance == null) {
