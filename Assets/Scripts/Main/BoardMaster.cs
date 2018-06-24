@@ -10,9 +10,8 @@ public class BoardMaster : MonoBehaviour {
 	private PlayerController playercontroller;
 	//テキストコントローラ
 	private TextController textcontroller;
-	//階段がいくつか定める
-	[SerializeField]
-	private int StageCount;
+	//階段が何段か
+	private int StageCount = 21;
 	//終着点
 	private float finish_point;
 	//勝った方のid(0: 自分、1: 敵)
