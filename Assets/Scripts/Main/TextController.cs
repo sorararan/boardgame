@@ -9,10 +9,6 @@ public class TextController : MonoBehaviour {
 		text = this.GetComponent<Text>();
 		text.text = "じゃんけーん\n";
 	}
-	
-	public string getText(){
-		return text.text;
-	}
 
 	public void setText(string txt){
 		text.text = txt;

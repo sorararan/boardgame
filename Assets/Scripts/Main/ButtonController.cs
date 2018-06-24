@@ -16,6 +16,7 @@ public class ButtonController : MonoBehaviour {
 	}
 
 	public void OnClickButton () {
+		//プレイヤが動いていないときだけボタンを押せる
 		if (!BoardMaster.is_moving) {
 			BoardMaster.getInstance ().UpdateGame (id);
 		}
