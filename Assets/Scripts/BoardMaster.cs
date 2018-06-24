@@ -24,7 +24,7 @@ public class BoardMaster : MonoBehaviour {
 			Instantiate(StagePrefab, new Vector3(1.5f + i * 1.5f, 0.0001f, 2), Quaternion.identity);
 		}
 		Instantiate(GoalPrefab, new Vector3(1.5f + i * 1.5f, 0.0001f, 0), Quaternion.identity);
-		Instantiate(GoalPrefab, new Vector3(1.5f + i * 1.5f, 0.0001f, 2), Quaternion.identity);
+		Instantiate(GoalPrefab, new Vector3(1.5f + i * 1.5f, 0.0001f, 2), Quaternion.identity);		
 	}
 	
 	// Update is called once per frame
